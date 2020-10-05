@@ -106,7 +106,6 @@ const Canvas = ({ setPoints, points, easy, score }) => {
     useEffect(() => {
 
         function Apple(x, y, color, sizeX, sizeY) {
-            console.log('math')
 
             this.x = (Math.floor(Math.random() * (300 - 0)) + 0);
             this.y = (Math.floor(Math.random() * (300 - 0)) + 0);
@@ -130,7 +129,6 @@ const Canvas = ({ setPoints, points, easy, score }) => {
                 for (let i = 0; i < myGameBarrier.current.x.length; i++) {
 
                     if (myGameBarrier.current.x[i] + myGameBarrier.current.width > this.x && this.x >= myGameBarrier.current.x[i] && myGameBarrier.current.y[i] + myGameBarrier.current.height > this.y && this.y >= myGameBarrier.current.y[i]) {
-                        console.log('ogogn')
 
                         this.randomPlaceApple(this.x, this.y)
                     }
@@ -147,7 +145,6 @@ const Canvas = ({ setPoints, points, easy, score }) => {
                         countPoints(myGamePiece.current.partBodySnakeCounter);
 
                         this.randomPlaceApple(this.x, this.y)
-                        console.log('bariera')
                     }
 
                     myGameArea.canvas.fillStyle = color;
