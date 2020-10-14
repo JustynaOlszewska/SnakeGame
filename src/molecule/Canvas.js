@@ -10,8 +10,8 @@ const Canvas = ({ setPoints, points, easy, score }) => {
     let myGameBarrier = useRef()
 
     myGameArea = {
-        changeTime: function () { 
-           this.interval =  requestAnimationFrame(updateGameArea)
+        changeTime: function () {
+            this.interval = requestAnimationFrame(updateGameArea)
         },
         start: function () {
 
@@ -126,8 +126,8 @@ const Canvas = ({ setPoints, points, easy, score }) => {
                 )
             }
             this.changePlaceApple = () => {
-                for (let i = 0; i < myGameBarrier.current.x.length; i++) {
 
+                for (let i = 0; i < myGameBarrier.current.x.length; i++) {
                     if (myGameBarrier.current.x[i] + myGameBarrier.current.width > this.x && this.x >= myGameBarrier.current.x[i] && myGameBarrier.current.y[i] + myGameBarrier.current.height > this.y && this.y >= myGameBarrier.current.y[i]) {
 
                         this.randomPlaceApple(this.x, this.y)
@@ -156,7 +156,7 @@ const Canvas = ({ setPoints, points, easy, score }) => {
 
         };
 
-        myGameApple.current = new Apple(40, 40, 'red', 20, 20);
+        myGameApple.current = new Apple(40, 40, 'black', 20, 20);
 
     });
 
@@ -350,9 +350,9 @@ const Canvas = ({ setPoints, points, easy, score }) => {
         myGamePiece.current.update();
 
         myGameApple.current.changePlaceApple();
-        setTimeout(function(){
-        myGameArea.interval =  requestAnimationFrame(updateGameArea)
-        },300)
+        setTimeout(function () {
+            myGameArea.interval = requestAnimationFrame(updateGameArea)
+        }, 300)
     }
 
     return (
